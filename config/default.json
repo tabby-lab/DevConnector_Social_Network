@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://Tabbybg:tabbybg@devconnector.f9dzb.mongodb.net/<dbname>?retryWrites=true&w=majority"
+}
+
