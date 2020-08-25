@@ -20,3 +20,6 @@ if(!token) {
     res.status(401).json({ msg: 'Token is not valid' });
  }
 }
+
+
+//then implement into a protected route
