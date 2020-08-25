@@ -52,7 +52,7 @@ router.post('/',
             if (!user) {
                 return res
                     .status(400)
-                    .json({ errors: [{ msg: ' Invalid credentials ' }] });
+                    .json({ errors: [{ msg: ' Invalid Credentials ' }] });
             }
 
 
@@ -61,6 +61,11 @@ router.post('/',
             //bcrypt has a method called compare
             const isMatch = await bcrypt.compare(password, user.password);
 
+            if(!isMatch) {
+                return res
+                    .status(400)
+                    .json({ errors: [{ msg: ' Invalid Credentials ' }] });
+            }
 
 
             //return jsonwebtoken
