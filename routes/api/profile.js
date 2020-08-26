@@ -71,13 +71,45 @@ router.post('/', [auth, [
         if(bio) profileFields.bio = bio;
         if(status) profileFields.status = status;
         if(githubusername) profileFields.githubusername = githubusername;
-        if(skills) profileFields.skills = skills;
-        if(youtube) profileFields.youtube = youtube;
-        if(facebook) profileFields.facebook = facebook;
-        if(twitter) profileFields.twitter = twitter;
-        if(instagram) profileFields.instagram = instagram;
-        if(linkedin) profileFields.linkedin = linkedin;
+        if(skills) {
+            profileFields.skills = skills.split(',').map(skill => skill.trim());
+        }
 
+        //build social object
+        profileFields.social = {}
+        if(youtube) profileFields.social.youtube = youtube;
+        if(facebook) profileFields.social.facebook = facebook;
+        if(twitter) profileFields.social.twitter = twitter;
+        if(instagram) profileFields.social.instagram = instagram;
+        if(linkedin) profileFields.social.linkedin = linkedin;
+    // res.send('Hello')
+
+        try {
+            let profile = await Profile.findOne({ user: req.user.id });
+            if(profile) {
+                //update
+                profile = await Profile.findOneAndUpdate(
+                    { user: req.user.id },
+                    { $set:profileFields },
+                    { new:true }
+                    );
+
+                    return res.json(profile);
+
+            }
+
+            //create
+            
+
+
+
+
+
+
+        } catch (err) {
+            console.error(err.message);
+            res.status(500).send('Server Error')
+        }
 
     }
 );
