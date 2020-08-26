@@ -3,7 +3,7 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 
 
 //@route        GET api/profile/me
@@ -42,12 +42,32 @@ router.post('/', [auth, [
     ]
  ],
     async (req, res) => {
-        const errors = vaidationResult(req);
+        const errors = validationResult(req);
         if(!errors.isEmpty()) {
             return res.status(400).json( { errors: errors.array() } );
         }
 
-    })
+        const{
+            company,
+            website,
+            location,
+            bio,
+            status,
+            githubusername,
+            skills,
+            youtube,
+            facebook,
+            twitter,
+            instagram,
+            linkedin
+        } = req.body;
+
+        //build profile object
+        const profileFields = {};
+
+
+    }
+);
 
 
 
