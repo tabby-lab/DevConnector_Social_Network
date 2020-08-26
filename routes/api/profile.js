@@ -99,12 +99,10 @@ router.post('/', [auth, [
             }
 
             //create
-            
+            profile = new Profile(profileFields);
 
-
-
-
-
+            await Profile.save();
+            res.json(profile);
 
         } catch (err) {
             console.error(err.message);
