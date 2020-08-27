@@ -179,6 +179,8 @@ router.delete('/', auth, async (req,res) => {
 //@route        PUT api/profile/experience
 //@description  Add profile experience 
 //@access       Private
+
+
 //all things required so we need validation
  
 router.put('/experience', 
@@ -210,7 +212,30 @@ async (req,res) => {
      to,
      current,
      description
- } = req.body
+ } = req.body;
+
+ const newExp = {
+     title,
+     company,
+     location,
+     from,
+     to,
+     current,
+     description
+ }
+
+ try {
+    const profile = await Profile.findOne({user: req.user.id}); 
+
+    profile.experience.unshift(newExp);
+
+    await profile.save();
+
+    res.json(profile);
+ } catch (err) {
+     console.error(err.message);
+     res.status(500).send('Server Error')
+ }
 
 
 
