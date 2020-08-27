@@ -176,7 +176,45 @@ router.delete('/', auth, async (req,res) => {
 });
 
 
+//@route        PUT api/profile/experience
+//@description  Add profile experience 
+//@access       Private
+//all things required so we need validation
+ 
+router.put('/experience', 
+[
+    auth, 
+    [
+        check('title, Title is required')
+        .not()
+        .isEmpty(),
+        check('company, Company is required')
+        .not()
+        .isEmpty(),
+        check('from, From date is required')
+        .not()
+        .isEmpty(),
+    ] 
+],
+async (req,res) => {
+ const errors = valdationResults(req);
+ if(!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+ }
 
+ const {
+     title,
+     company,
+     location,
+     from,
+     to,
+     current,
+     description
+ } = req.body
+
+
+
+});
 
 
 
