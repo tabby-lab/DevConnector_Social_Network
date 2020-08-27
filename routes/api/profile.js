@@ -4,6 +4,10 @@ const auth = require('../../middleware/auth');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 const { check, validationResult } = require('express-validator');
+//for github
+const request = require('request');
+const config = require('config');
+
 
 
 //@route        GET api/profile/me
@@ -351,6 +355,26 @@ try {
      res.status(500).send('Server Error')
 }
 });
+
+
+
+
+
+
+//@route        GET api/profile/github/:username
+//@description  GET user repos from Github
+//@access       Public
+
+router.get('/github/:username', (req,res) => {
+    try {
+       const options = {
+           uri: ``
+       } 
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+})
 
 
 

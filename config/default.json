@@ -1,5 +1,7 @@
 {
     "mongoURI": "mongodb+srv://Tabbybg:tabbybg@devconnector.f9dzb.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    "jwtSecret": "mysecrettoken"
+    "jwtSecret": "mysecrettoken",
+    "githubClientId":"f776320cbc5efb8ee699",
+    "githubSecret":"9dde538d52cf5f605de600417d0d34112f2e2d5e"
 }
 
