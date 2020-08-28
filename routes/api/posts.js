@@ -63,7 +63,24 @@ router.get('/', auth, async (req,res) => {
         console.error(err.message);
         res.status(500).send('Server Error');
     }
+});
+
+//@route        GET api/posts/:id
+//@description  Get post by id
+//@access       Private
+
+router.get('/:id', auth, async (req,res) => {
+
+    try {
+        const post = await Post.findById(req.params.id);
+        res.json(posts)
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
 })
+
+
 
 
 
