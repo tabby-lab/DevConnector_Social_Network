@@ -18,4 +18,4 @@ const mapStateToProps = state => ({
     alerts: state.alert
 });
 
-export default connect()(Alert);
+export default connect(mapStateToProps)(Alert);
