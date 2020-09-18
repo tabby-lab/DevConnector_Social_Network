@@ -22,5 +22,17 @@ case REGISTER_SUCCESS:
         isAuthenticated: true,
         loading:false
     }
+
+    case REGISTER_FAIL:
+    localStorage.removeItem('token');
+    return{
+        ...state, 
+        token:null,
+        isAuthenticated: false,
+        loading:false 
+    }
+
+    default:
+        return state;
 }
 }
