@@ -26,7 +26,7 @@ case REGISTER_SUCCESS:
     case REGISTER_FAIL:
     localStorage.removeItem('token');
     return{
-        ...state, 
+        ...state,  
         token:null,
         isAuthenticated: false,
         loading:false 
