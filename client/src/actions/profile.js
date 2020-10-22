@@ -64,4 +64,9 @@ export const createProfile = (formData, history, edit = false) => async dispatch
             }
         });
     }
-} 
+} ;
+
+//Add experience
+export const addExperience = (formData,history) => async dispatch =>{
+    
+}
