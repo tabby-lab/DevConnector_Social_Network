@@ -11,9 +11,9 @@ const Education = ({ education }) => {
             <td>{edu.school}</td>
     <td className="hide-sm">{edu.degree}</td>
     <td>
-    <Moment fromat='YYYY/MM/DD'>{edu.from}</Moment> - {' '}
+    <Moment format='YYYY/MM/DD'>{edu.from}</Moment> - {' '}
         {edu.to == null ? (' Now ') : (
-        <Moment fromat='YYYY/MM/DD'>{edu.to}</Moment> )
+        <Moment format='YYYY/MM/DD'>{edu.to}</Moment> )
     }
     </td>
     <td>
