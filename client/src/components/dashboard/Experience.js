@@ -7,19 +7,19 @@ import Moment from 'react-moment';
 
 const Experience = ({ experience }) => {
     const experiences = experience.map(exp => (
-        <td key ={experience._id}>
+        <tr key ={experience._id}>
             <td>{exp.company}</td>
     <td className="hide-sm">{exp.title}</td>
     <td>
-    <Moment fromat='YYYY/MM/DD'>{exp.from}</Moment> - {
-        exp.to == null ? (' Now ') : (
+    <Moment fromat='YYYY/MM/DD'>{exp.from}</Moment> - {' '}
+        {exp.to == null ? (' Now ') : (
         <Moment fromat='YYYY/MM/DD'>{exp.to}</Moment> )
     }
     </td>
     <td>
         <button className='btn btn-danger'>Delete</button>
     </td>
-        </td>
+        </tr>
     ));
     return (
         <Fragment>
