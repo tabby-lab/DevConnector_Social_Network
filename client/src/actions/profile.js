@@ -13,7 +13,7 @@ import {
 //Get current users profile
 
 export const getCurrentProfile = () => async dispatch => {
-    dispatch({ type: CLEAR_PROFILE });
+  
     try {
         const res = await axios.get('/api/profile/me');
 
@@ -36,6 +36,7 @@ export const getCurrentProfile = () => async dispatch => {
 
 //GET ALL PROFILES
 export const getProfiles = () => async dispatch => {
+    dispatch({ type: CLEAR_PROFILE });
     try {
         const res = await axios.get('/api/profile');
 
@@ -54,6 +55,29 @@ export const getProfiles = () => async dispatch => {
         });
     }
 };
+
+//GET ALL PROFILE BY ID
+export const getProfileById = userId => async dispatch => {
+
+    try {
+        const res = await axios.get(`/api/profile/user/${userId}`);
+
+        dispatch({
+            type:GET_PROFILE,
+            payload: res.data
+        });
+
+    } catch (err) {
+        dispatch({
+            type:PROFILE_ERROR,
+            payload: {
+                msg:err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+};
+
 
 
 
