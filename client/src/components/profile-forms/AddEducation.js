@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 const AddEducation = ({ addEducation, history }) => {
@@ -54,7 +54,7 @@ const AddEducation = ({ addEducation, history }) => {
           onChange ={e => onChange(e)}/>
         </div>
          <div className="form-group">
-          <p><input type="checkbox" name="current" checked={current} value="" value={current} onChange={e => {
+          <p><input type="checkbox" name="current" checked={current} value={current} onChange={e => {
               setFormData({ ...formData, current: !current });
               toggleDisabled(!toDateDisabled);
           }}
@@ -86,4 +86,4 @@ AddEducation.propTypes = {
 addEducation: PropTypes.func.isRequired
 }
 
-export default connect(null, {addEducation})(AddEducation)
+export default connect(null, {addEducation})(withRouter(AddEducation))
