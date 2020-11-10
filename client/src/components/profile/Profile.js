@@ -12,11 +12,11 @@ const Profile = ({
         getProfileById(match.params.id);
     }, [getProfileById]);
 
-    return (
-        <div>
+    return <Fragment>
+        {profile === null || loading ? <Spinner /> : <Fragment>
             profile
-        </div>
-    )
+            </Fragment>}
+    </Fragment>;
 }
 
 Profile.propTypes = {
