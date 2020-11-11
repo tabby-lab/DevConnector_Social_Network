@@ -13,6 +13,11 @@ const authLinks = (
          Developers
        </Link>
           </li>
+          <li>
+          <Link to='/posts'>
+         Posts
+       </Link>
+          </li>
 <li>
           <Link to='/dashboard'>
           <i className="fas fa-user-alt"></i>{' '}
@@ -41,6 +46,7 @@ const guestLinks = (
           <li>
          <Link to='login'>Login</Link>
          </li>
+         
         </ul>
 );
 

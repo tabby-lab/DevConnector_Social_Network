@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
 import Spinner from '../layout/Spinner';
 
-const Posts = props => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const Posts = ({ getPosts, post: { posts, loading } }) => {
+    useEffect(()=> {
+        getPosts();
+    }, [getPosts]);
+
+    return <div/>;
+   
+};
 
 Posts.propTypes = {
     getPosts: PropTypes.func.isRequired,
