@@ -17,7 +17,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
             <p className="lead">
                 <i className="fas fa-user"></i>Welcome to the community.
             </p>
-            {/* postform */}
+          
 
             <div className="posts">
                 {post.map(post => (
@@ -34,7 +34,7 @@ Posts.propTypes = {
     post: PropTypes.object.isRequired
 }
 
-const mapStateToProps = state => ({ 
+const mapStateToProps = (state) => ({ 
     post: state.post
  });
 
