@@ -13,7 +13,11 @@ const PostForm = ({ addPost }) => {
         <div className="bg-primary p">
           <h3>Say Something...</h3>
         </div>
-        <form className="form my-1">
+        <form className="form my-1" onSubmit={e => {
+            e.preventDefault();
+            addPost({ text });
+            setText('');
+        }}>
           <textarea
             name="text"
             cols="30"
