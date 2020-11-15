@@ -53,9 +53,9 @@ const PostItem = ({
       {!auth.loading && user === auth.user._id && (
         <button onClick={e => deletePost(_id)}
           type="button"
-          class="btn btn-danger"
+          className="btn btn-danger"
         >
-          <i class="fas fa-times"></i>
+          <i className="fas fa-times"></i>
         </button>
       )}
 
