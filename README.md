@@ -1,5 +1,11 @@
 # DevConnector_Social_Network
 
+## Link
+Project Link: [https://mysterious-citadel-42323.herokuapp.com/](https://mysterious-citadel-42323.herokuapp.com/)
+
+
+https://mysterious-citadel-42323.herokuapp.com/
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -67,7 +73,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://mysterious-citadel-42323.herokuapp.com/](https://mysterious-citadel-42323.herokuapp.com/)
 
 
 
